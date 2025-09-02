@@ -1,0 +1,19 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Hardcoded data (from your table)
+R_ohm = np.array([1e3, 1e4, 1e5, 6.8e5, 1e6, 2.2e6, 3.9e6, 5.6e6, 8.2e6, 1e7])
+Vrms2 = np.array([3.26e-06, 4.07e-06, 1.33e-05, 7.01e-05,
+                  1.047969209e-04, 2.225866971e-04, 3.451629145e-04,
+                  4.21859284e-04, 6.06717986e-04, 6.171741981e-04])
+
+# Plot Vrms^2 vs Resistance
+plt.figure(figsize=(6,4))
+plt.plot(R_ohm, Vrms2, 'o-', label=r'Measured $\langle V^2 \rangle$')
+plt.xlabel("Resistance $R$ (Ω)")
+plt.ylabel(r"$V_\mathrm{rms}^2$ (V$^2$)")
+plt.title("Noise power vs Resistance")
+plt.grid(True)
+plt.legend()
+plt.tight_layout()
+plt.show()
